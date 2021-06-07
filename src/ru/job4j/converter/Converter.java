@@ -4,19 +4,23 @@ public class Converter {
 
     public static int rubleToEuro(int value) {
         return value / 70;
-
     }
 
     public static int rubleToDollar(int value) {
-        return value / 60; /* формула перевода рублей в доллары. */
-
+        return value / 60;
     }
 
     public static void main(String[] args) {
-        int euro = Converter.rubleToEuro(140);
-        System.out.println("140 rubles are " + euro + " euro.");
+        int inEuro = 140;
+        int expected = 2;
+        int outEuro = Converter.rubleToEuro(inEuro);
+        boolean passed = expected == outEuro;
+        System.out.println(inEuro + " rubles are " + expected + ". Test result : " + passed);
 
-        int usd = Converter.rubleToDollar(180);
-        System.out.println("180 rubles are " + usd + " usd.");
+        int inUsd = 180;
+        expected = 3;
+        int outUsd = Converter.rubleToDollar(inUsd);
+        passed = expected == outUsd;
+        System.out.println(inUsd + " rubles are " + expected + ". Test result: " + passed);
     }
 }
