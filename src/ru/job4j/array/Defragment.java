@@ -6,7 +6,7 @@ public class Defragment {
             if (array[index] == null) {
                 /* указатель на null ячейку. */
                 /* переместить первую не null ячейку. Нужен цикл. */
-                for (int i = index; i < array.length; i++) {
+                for (int i = index + 1; i < array.length; i++) {
                     if (array[i] != null) {
                         SwitchArray.swap(array, index, i);
                         break;
