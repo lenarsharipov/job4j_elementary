@@ -21,4 +21,44 @@ public class ArrayInSquareArrayTest {
         int[][] rsl = ArrayInSquareArray.convertArray(array);
         assertThat(rsl, is(expected));
     }
+
+    @Test
+    public void convertInSquareArrayWithout0() {
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[][] expected = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] rsl = ArrayInSquareArray.convertArray(array);
+        assertThat(rsl, is(expected));
+    }
+
+    @Test
+    public void convertInSquareArray() {
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+        int[][] expected = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 0}, {0, 0, 0, 0}};
+        int[][] rsl = ArrayInSquareArray.convertArray(array);
+        assertThat(rsl, is(expected));
+    }
+
+    @Test
+    public void convertInSquareArrayVer2() {
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[][] expected = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 0, 0}, {0, 0, 0, 0}};
+        int[][] rsl = ArrayInSquareArray.convertArray(array);
+        assertThat(rsl, is(expected));
+    }
+
+    @Test
+    public void convertInSquareArrayVer3() {
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+        int[][] expected = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {0, 0, 0, 0}};
+        int[][] rsl = ArrayInSquareArray.convertArray(array);
+        assertThat(rsl, is(expected));
+    }
+
+    @Test
+    public void convertInSquareArrayVer4() {
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+        int[][] expected = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 0, 0, 0}};
+        int[][] rsl = ArrayInSquareArray.convertArray(array);
+        assertThat(rsl, is(expected));
+    }
 }
