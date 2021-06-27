@@ -4,28 +4,19 @@ import java.util.Arrays;
 
 public class CheckSumIndexes {
     public static int[] collectNewArray(int[][] data, int sum) {
-        int count = 0;
-        for (int i = 0; i < data.length; i++) {
-            for (int j = 0; j < data[i].length; j++) {
-                count++;
-                if (i + j == sum) {
-                    data[i][j] = 0;
-                    count--;
+        int count = 0, zeros = 0;
+        int[] arrayTemp = new int[data.length * data.length];
+        for (int row = 0; row < data.length; row++) {
+            for (int cell = 0; cell < data.length; cell++) {
+                if (row + cell == sum) {
+                    data[row][cell] = 0;
+                    zeros++;
                 }
-            }
-        }
-        int[] array = new int[count];
-        count = 0;
-        for (int i = 0; i < data.length; i++) {
-            for (int j = 0; j < data.length; j++) {
-                if (data[i][j] != 0) {
-                    array[count] = data[i][j];
-                } else {
-                    count--;
-                }
+                arrayTemp[count] = data[row][cell];
                 count++;
             }
         }
-        return array;
+        Arrays.sort(arrayTemp);
+        return Arrays.copyOfRange(arrayTemp, zeros, arrayTemp.length);
     }
 }
