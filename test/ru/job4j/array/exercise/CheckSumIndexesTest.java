@@ -20,6 +20,19 @@ public class CheckSumIndexesTest {
     }
 
     @Test
+    public void collectNewArrayVarious() {
+        int[][] data = {
+                {-57,   2,  3,   -16},
+                {5,    88,  7,  -999},
+                {9,  -155,  11,   90},
+                {665,   1,   3,    2}
+        };
+        int[] rsl = CheckSumIndexes.collectNewArray(data, 3);
+        int[] expected = {-57, 2, 3, 5, 88, -999, 9, 11, 90, 1, 3, 2};
+        assertThat(rsl, is(expected));
+    }
+
+    @Test
     public void collectNewArrayVer2() {
         int[][] data = {
                 {1,  2,  3,  4,  5},
