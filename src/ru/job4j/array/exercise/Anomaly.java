@@ -22,19 +22,15 @@ public class Anomaly {
 
             if (data[i] <= down || data[i] >= up) {
                 result[rowCount][0] = i;
-
                 for (int j = i + 1; j < data.length; j++) {
                     if (data[j] <= down || data[j] >= up) {
                         result[rowCount][1] = j;
-                        rowCount++;
-                        i = j;
-                        break;
                     } else {
-                    result[rowCount][1] = i;
+                        result[rowCount][1] = i;
+                    }
                     rowCount++;
                     i = j;
                     break;
-                    }
                 }
             }
         }
