@@ -40,7 +40,7 @@ public class SymmetricDiff {
             boolean isEqual = false;
             for (int j = 0; j < arrayTemp.length; j++) {
                 if (i == j) {
-
+                    continue;
                 } else if (arrayTemp[i] == arrayTemp[j]) {
                     isEqual = true;
                     break;
