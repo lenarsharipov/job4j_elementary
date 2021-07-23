@@ -2,12 +2,11 @@ package ru.job4j.array;
 
 public class Square {
     public static int[] calculate(int bound) {
-        int[] rst = new int[bound];
-        /* заполнить массив через цикл элементами от 0 до bound , возведенными в квадрат */
-        for (int i = 0; i < bound; i++) {
-            rst[i] = i * i;
+        int[] result = new int[bound];
+        for (int index = 0; index < bound; index++) {
+            result[index] = index * index;
         }
-        return rst;
+        return result;
     }
 
     public static void main(String[] args) {

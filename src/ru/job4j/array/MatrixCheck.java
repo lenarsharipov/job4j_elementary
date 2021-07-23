@@ -3,8 +3,8 @@ package ru.job4j.array;
 public class MatrixCheck {
         public static boolean monoHorizontal(char[][] board, int row) {
                 boolean result = true;
-                for (int x = 0; x < board.length; x++) {
-                                if (board[row][x] != 'X') {
+                for (int index = 0; index < board.length; index++) {
+                                if (board[row][index] != 'X') {
                                         result = false;
                                         break;
                         }
@@ -14,8 +14,8 @@ public class MatrixCheck {
 
         public static boolean monoVertical(char[][] board, int column) {
                 boolean result = true;
-                for (int x = 0; x < board.length; x++) {
-                           if (board[x][column] != 'X') {
+                for (int index = 0; index < board.length; index++) {
+                           if (board[index][column] != 'X') {
                                         result = false;
                                         break;
                            }
@@ -24,17 +24,17 @@ public class MatrixCheck {
         }
 
         public static char[] extractDiagonal(char[][] board) {
-                char[] rsl = new char[board.length];
-                for (int i = 0; i < rsl.length; i++) {
-                        rsl[i] = board[i][i];
+                char[] result = new char[board.length];
+                for (int index = 0; index < result.length; index++) {
+                        result[index] = board[index][index];
                 }
-                return rsl;
+                return result;
         }
 
         public static boolean isWin(char[][] board) {
                 boolean result = false;
-                for (int i = 0; i < board.length; i++) {
-                        if (board[i][i] == 'X' && (monoHorizontal(board, i) || monoVertical(board, i))) {
+                for (int index = 0; index < board.length; index++) {
+                        if (board[index][index] == 'X' && (monoHorizontal(board, index) || monoVertical(board, index))) {
                                 result = true;
                                 break;
                         }
