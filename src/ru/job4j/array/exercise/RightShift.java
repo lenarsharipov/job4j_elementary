@@ -8,7 +8,6 @@ public class RightShift {
         }
     }
 
-    // метод делает сдвиг с шагом 1
     private static void shift(int[] nums) {
         int[] array = new int[nums.length];
         array[0] = nums[nums.length - 1];
