@@ -20,4 +20,5 @@ public class JavaNameValidator {
         }
         return valid;
     }
+
 }
