@@ -10,7 +10,7 @@ public class DoWhileExample {
             System.out.println("Введите пароль: ");
             password = scanner.nextInt();
         } while (password != 555);
-            System.out.println("Пароль введён успешно!");
+        System.out.println("Пароль введён успешно!");
     }
 
 }
